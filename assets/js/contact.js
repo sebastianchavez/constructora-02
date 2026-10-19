@@ -41,8 +41,9 @@
       const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!re.test(value)) { valid = false; message = 'Email inválido'; }
     } else if (type === 'tel') {
-      const re = /^[\d\s+\-()]{7,}$/;
-      if (!re.test(value)) { valid = false; message = 'Teléfono inválido'; }
+      const normalized = value.replace(/[\s()\-]/g, '');
+      const re = /^(?:\+?56)?[2-9]\d{8}$/;
+      if (!re.test(normalized)) { valid = false; message = 'Ingresa un teléfono chileno de 9 dígitos, con +56 opcional'; }
     }
 
     field.classList.toggle('error', !valid);

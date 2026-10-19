@@ -114,9 +114,9 @@ Para personalizar el template, edita directamente este archivo JS.
 ## 📞 Información de contacto (mockeada)
 
 - **Empresa:** Constructora Andina
-- **Dirección:** Av. Constructores 1234, Lima, Perú
-- **Teléfono:** +51 999 888 777
-- **Email:** contacto@constructoraandina.com
+- **Dirección:** Av. Providencia 1234, Providencia, Santiago, Chile
+- **Teléfono:** +56 9 1234 5678
+- **Email:** contacto@constructoraandina.cl
 - **Horarios:** Lun-Vie 8:00-18:00 / Sáb 9:00-13:00 / Dom Cerrado
 
 ## ⚙️ Personalización rápida
@@ -125,7 +125,7 @@ Para personalizar el template, edita directamente este archivo JS.
 2. **Cambiar textos**: edita `assets/js/data.js`
 3. **Cambiar imágenes**: las URLs de Unsplash están en `data.js` (campo `image`)
 4. **Cambiar mapa**: edita el `src` del iframe en `pages/contacto.html`
-5. **Cambiar WhatsApp**: edita el número en todos los HTML (busca `51999888777`)
+5. **Cambiar WhatsApp**: edita el número en todos los HTML (busca `56912345678`)
 
 ## 🖥️ Compatibilidad
 
@@ -143,3 +143,7 @@ Para personalizar el template, edita directamente este archivo JS.
 ---
 
 Desarrollado como template base para proyectos de constructoras.
+
+## Localización chilena
+
+Los montos son ejemplos referenciales en CLP, con formato es-CL, sin conversión automática de divisas. Los planes por m² incluyen IVA en el ejemplo. Teléfono, correo, dirección y proyectos son datos ficticios para demostración; reemplázalos antes de publicar. El mapa muestra el sector de Providencia, Santiago. El formulario conserva su comportamiento de demostración y no envía mensajes a un servidor.

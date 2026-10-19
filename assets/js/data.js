@@ -1,13 +1,16 @@
+const formatCLP = (value) => new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', maximumFractionDigits: 0 }).format(value);
+
+// Datos ficticios de la plantilla: reemplazar antes de publicar.
 const COMPANY = {
   name: "Constructora Andina",
   shortName: "Andina",
   tagline: "Construimos tus sueños, edificamos el futuro",
   foundedYear: 2010,
-  phone: "+51 999 888 777",
-  phoneRaw: "+51999888777",
-  email: "contacto@constructoraandina.com",
-  address: "Av. Constructores 1234, Lima, Perú",
-  addressShort: "Av. Constructores 1234, Lima",
+  phone: "+56 9 1234 5678",
+  phoneRaw: "+56912345678",
+  email: "contacto@constructoraandina.cl",
+  address: "Av. Providencia 1234, Providencia, Santiago, Chile",
+  addressShort: "Av. Providencia 1234, Providencia, Santiago",
   hours: {
     weekdays: "Lunes a Viernes: 8:00 - 18:00",
     saturday: "Sábado: 9:00 - 13:00",
@@ -84,7 +87,7 @@ const PROJECTS = [
     id: 1,
     title: "Residencial Los Olivos",
     category: "residencial",
-    location: "Lima, Miraflores",
+    location: "Santiago, Las Condes",
     year: 2024,
     image: "https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=1200&q=80"
   },
@@ -92,31 +95,31 @@ const PROJECTS = [
     id: 2,
     title: "Torre Empresarial San Pablo",
     category: "comercial",
-    location: "Lima, San Isidro",
+    location: "Santiago, Providencia",
     year: 2023,
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 3,
-    title: "Casa Moderna Surco",
+    title: "Casa Moderna La Reina",
     category: "residencial",
-    location: "Lima, Surco",
+    location: "Santiago, La Reina",
     year: 2024,
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 4,
-    title: "Planta Industrial Callao",
+    title: "Planta Industrial San Bernardo",
     category: "industrial",
-    location: "Callao",
+    location: "San Bernardo",
     year: 2023,
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 5,
-    title: "Remodelación Apartamento Barranco",
+    title: "Remodelación Apartamento Ñuñoa",
     category: "remodelacion",
-    location: "Lima, Barranco",
+    location: "Santiago, Ñuñoa",
     year: 2024,
     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1200&q=80"
   },
@@ -124,55 +127,55 @@ const PROJECTS = [
     id: 6,
     title: "Centro Comercial Plaza Norte",
     category: "comercial",
-    location: "Lima, Independencia",
+    location: "Santiago, Independencia",
     year: 2022,
     image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 7,
-    title: "Bodega Industrial Ate",
+    title: "Bodega Industrial Quilicura",
     category: "industrial",
-    location: "Lima, Ate",
+    location: "Santiago, Quilicura",
     year: 2023,
     image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 8,
-    title: "Casa de Campo Cieneguilla",
+    title: "Casa de Campo Colina",
     category: "residencial",
-    location: "Cieneguilla",
+    location: "Colina",
     year: 2024,
     image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 9,
-    title: "Renovación Oficinas La Molina",
+    title: "Renovación Oficinas Vitacura",
     category: "remodelacion",
-    location: "Lima, La Molina",
+    location: "Santiago, Vitacura",
     year: 2024,
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 10,
-    title: "Edificio Multifamiliar Jesús María",
+    title: "Edificio Multifamiliar Macul",
     category: "residencial",
-    location: "Lima, Jesús María",
+    location: "Santiago, Macul",
     year: 2022,
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 11,
-    title: "Local Comercial San Borja",
+    title: "Local Comercial San Miguel",
     category: "comercial",
-    location: "Lima, San Borja",
+    location: "Santiago, San Miguel",
     year: 2023,
     image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80"
   },
   {
     id: 12,
-    title: "Complejo Industrial Lurín",
+    title: "Complejo Industrial Pudahuel",
     category: "industrial",
-    location: "Lurín",
+    location: "Pudahuel",
     year: 2024,
     image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?auto=format&fit=crop&w=1200&q=80"
   }
@@ -229,7 +232,7 @@ const TESTIMONIALS = [
 const PRICING = [
   {
     id: "basico",
-    price: 1500,
+    price: 650000,
     title: "Plan Básico",
     description: "Ideal para proyectos pequeños y remodelaciones puntuales.",
     highlighted: false,
@@ -245,7 +248,7 @@ const PRICING = [
   },
   {
     id: "profesional",
-    price: 4500,
+    price: 950000,
     title: "Plan Profesional",
     description: "La opción más popular. Equilibrio perfecto entre calidad y precio.",
     highlighted: true,
@@ -261,7 +264,7 @@ const PRICING = [
   },
   {
     id: "premium",
-    price: 8500,
+    price: 1350000,
     title: "Plan Premium",
     description: "Servicio VIP llave en mano con los mejores acabados del mercado.",
     highlighted: false,
@@ -284,7 +287,7 @@ const COURSES = [
     description: "Aprende las técnicas fundamentales de construcción, mezclas, muros y acabados.",
     instructor: "Ing. Roberto Salazar",
     duration: "20 horas",
-    price: 350,
+    price: 85000,
     days: ["Lunes", "Miércoles"],
     hours: "18:00 - 21:00",
     level: "Principiante",
@@ -296,7 +299,7 @@ const COURSES = [
     description: "Convierte espacios en ambientes funcionales y estéticamente atractivos.",
     instructor: "Arq. Laura Castillo",
     duration: "16 horas",
-    price: 420,
+    price: 105000,
     days: ["Martes", "Jueves"],
     hours: "19:00 - 21:30",
     level: "Intermedio",
@@ -308,7 +311,7 @@ const COURSES = [
     description: "Normativas, equipos de protección y prevención de riesgos laborales.",
     instructor: "Ing. Miguel Huamán",
     duration: "12 horas",
-    price: 280,
+    price: 70000,
     days: ["Sábado"],
     hours: "09:00 - 13:00",
     level: "Todos",
@@ -320,7 +323,7 @@ const COURSES = [
     description: "Aprende a elaborar presupuestos profesionales con software especializado.",
     instructor: "Econ. Fernando Ríos",
     duration: "24 horas",
-    price: 480,
+    price: 120000,
     days: ["Viernes", "Sábado"],
     hours: "18:00 - 22:00",
     level: "Intermedio",
@@ -332,7 +335,7 @@ const COURSES = [
     description: "Guía práctica para construir tu propia casa paso a paso con supervisión profesional.",
     instructor: "Ing. Carlos Mendoza",
     duration: "30 horas",
-    price: 550,
+    price: 140000,
     days: ["Domingo"],
     hours: "09:00 - 14:00",
     level: "Principiante",
@@ -344,7 +347,7 @@ const COURSES = [
     description: "Técnicas profesionales de pintura, pisos, enchapes y detalles decorativos.",
     instructor: "Maestro Pedro Gómez",
     duration: "18 horas",
-    price: 380,
+    price: 95000,
     days: ["Miércoles", "Viernes"],
     hours: "19:00 - 22:00",
     level: "Intermedio",
@@ -355,14 +358,14 @@ const COURSES = [
 const FAQ = [
   {
     q: "¿Cuánto cuesta el metro cuadrado construido?",
-    a: "El costo varía según el tipo de proyecto, acabados y ubicación. En construcción tradicional oscila entre $450 y $700 por m². Te enviamos un presupuesto personalizado sin compromiso."
+    a: "El costo varía según el tipo de proyecto, acabados y ubicación. Como referencia para esta plantilla, los planes parten desde $650.000 CLP por m². El valor final depende de la evaluación del proyecto. Te enviamos un presupuesto personalizado sin compromiso."
   },
   {
     q: "¿Cuánto tiempo toma construir una casa?",
     a: "Una vivienda unifamiliar de 150m² toma entre 4 y 6 meses. Edificios comerciales entre 8 y 18 meses, dependiendo de la complejidad y tamaño del proyecto."
   },
   {
-    q: "¿Trabajan fuera de Lima?",
+    q: "¿Trabajan fuera de Santiago?",
     a: "Sí, tenemos experiencia en proyectos a nivel nacional. Los costos de logística y supervisión se cotizan por separado según la ubicación."
   },
   {
@@ -380,12 +383,12 @@ const FAQ = [
 ];
 
 const TIMELINE = [
-  { year: 2010, title: "Fundación", text: "Nace Constructora Andina con un equipo de 5 profesionales en Lima." },
-  { year: 2014, title: "Primeros 50 proyectos", text: "Crecimiento sostenido en el sector residencial de Lima Metropolitana." },
+  { year: 2010, title: "Fundación", text: "Nace Constructora Andina con un equipo de 5 profesionales en Santiago." },
+  { year: 2014, title: "Primeros 50 proyectos", text: "Crecimiento sostenido en el sector residencial de la Región Metropolitana." },
   { year: 2017, title: "Expansión comercial", text: "Incorporamos el área de construcción comercial e industrial." },
   { year: 2020, title: "Certificación ISO", text: "Obtenemos certificación ISO 9001 en gestión de calidad." },
   { year: 2023, title: "300+ proyectos", text: "Superamos los 300 proyectos entregados en todo el país." },
   { year: 2026, title: "Innovación digital", text: "Implementamos modelado BIM y realidad virtual en todos los proyectos." }
 ];
 
-window.APP_DATA = { COMPANY, STATS, SERVICES, PROJECTS, TEAM, TESTIMONIALS, PRICING, COURSES, FAQ, TIMELINE };
+window.APP_DATA = { formatCLP, COMPANY, STATS, SERVICES, PROJECTS, TEAM, TESTIMONIALS, PRICING, COURSES, FAQ, TIMELINE };

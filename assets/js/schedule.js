@@ -43,7 +43,7 @@
           <div class="flex items-center justify-between pt-4 border-t border-gray-100">
             <div>
               <p class="text-xs text-gray-500">Inversión</p>
-              <p class="text-2xl font-bold text-yellow-600">S/ ${c.price}</p>
+              <p class="text-2xl font-bold text-yellow-600">${window.APP_DATA.formatCLP(c.price)} CLP</p>
             </div>
             <button data-inscribe="${c.id}" class="btn-primary px-5 py-2 rounded-lg font-semibold text-sm">Inscribirme</button>
           </div>
